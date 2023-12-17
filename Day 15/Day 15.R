@@ -47,7 +47,7 @@ for(i in 1:length(input)){
   op    <- str_sub(s, pos, pos)
   label <- str_sub(s, 1, pos-1)
   boxno <- hash(label) + 1
-  box <- boxes[[boxno]]
+  box   <- boxes[[boxno]]
 
   if(op == "=") {
     #operation is "=" : replace the existing lens with the given label with the new focal_length. If one does not exist, add the lens at the end of the box.
@@ -59,7 +59,7 @@ for(i in 1:length(input)){
   } else {
     
     #operation is minus : remove the lens with the given label from the box if it exists)
-    if(!is.na(box[label])) boxes[[boxno]] <- boxes[[boxno]][!names(boxes[[boxno]]) == label]
+    boxes[[boxno]] <- boxes[[boxno]][!names(boxes[[boxno]]) == label]
   }
 }
 
@@ -71,4 +71,3 @@ for(i in 1:length(boxes)){
   }
 }
 acc_fp  #271384  : Correct!
-
