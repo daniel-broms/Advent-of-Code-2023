@@ -2,6 +2,7 @@
 #Data import boilerplate code
 ############################################################################################################
 library(tidyverse)
+options(scipen=999)   #Do not use scientific notation for very large numbers
 
 #Import text file lines to a character vector using readlines:
 input <- readLines("Day 8/input.txt")                        #Simply imports text lines, separated by newline.

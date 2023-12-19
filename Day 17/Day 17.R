@@ -54,7 +54,7 @@ find_way <- function(target) {
       }
       
       #If we have not seen this exact state with the same or lower cost before : Add this neighbor to the queue.
-      x <- seen_states[[toString(ne_list[[i]][-6] )]]
+      x <-   seen_states[[toString(ne_list[[i]][-6])]]
       y <- queued_states[[toString(ne_list[[i]][-6])]]
       if( (is.null(x) || x > ne_list[[i]][6]) & (is.null(y)|| y > ne_list[[i]][6]) ){
         q$push(ne_list[i], priority = -(ne_list[[i]][6]))     
